@@ -59,12 +59,12 @@ module.exports.http = {
   ****************************************************************************/
 
      myRequestLogger: function (req, res, next) {
-		 console.log(req.headers);
+		 console.log(req.headers.referer);
       
-      var adr=req.headers.host;
-         if (req.headers.host.startsWith('www')==false)
+      //var adr=req.headers.host;
+        // if (req.headers.host.startsWith('www')==false)
          
-         {res.redirect('http://www.'+req.headers.host);}
+        // {res.redirect('http://www.'+req.headers.host);}
          return next();
      }
 
