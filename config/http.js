@@ -59,6 +59,7 @@ module.exports.http = {
   ****************************************************************************/
 
      myRequestLogger: function (req, res, next) {
+		 console.log(req);
          console.log("Requested :: ", req.method, req.url);
          return next();
      }
