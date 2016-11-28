@@ -64,7 +64,7 @@ module.exports.http = {
       var adr=req.headers.host;
          if (req.headers.host.startsWith('www')==false)
          
-         {res.redirect('www.'+adr);}
+         {res.redirect('www.chessbond.com');}
          return next();
      }
 
