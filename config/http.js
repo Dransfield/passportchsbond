@@ -60,8 +60,8 @@ module.exports.http = {
 
      myRequestLogger: function (req, res, next) {
 		 console.log(req.headers.referer);
-      var str=req.headers.referer;
-         if (str.startsWith('http://www')==false)
+      var str=req.headers.host;
+         if (str.startsWith('www')==false)
          
          {res.redirect(str.replace("http://", "http://www."));}
          return next();
