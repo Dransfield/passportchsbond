@@ -14,7 +14,17 @@ module.exports = {
         shortcuts: false,
         rest: false
     },
-
+	loginfacebook:function(req,res){
+passport.authenticate('facebook',{ scope : [ 'email'] })(req, res);
+	},
+	facebookcallback:function(req,res)
+	{
+		
+		 passport.authenticate('facebook',{
+            successRedirect : '/profile',
+            failureRedirect : '/'
+        })(req, res);;
+	},
     login: function(req, res) {
 
         passport.authenticate('local', function(err, user, info) {

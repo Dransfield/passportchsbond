@@ -21,6 +21,8 @@
     "include-all": "^1.0.0",
       "passport": "~0.2.1",
     "passport-local": "~1.0.0",
+    "passport-facebook": "*",
+    
     "rc": "1.0.1",
     "sails": "~0.12.8",
     "sails-disk": "~0.10.9"

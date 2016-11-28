@@ -10,13 +10,13 @@ module.exports = {
     attributes: {
         email: {
             type: 'email',
-            required: true,
+            required: false,
             unique: true
         },
         password: {
             type: 'string',
             minLength: 6,
-            required: true
+            required: false
         },
         toJSON: function() {
             var obj = this.toObject();
