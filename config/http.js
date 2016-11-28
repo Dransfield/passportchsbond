@@ -61,10 +61,10 @@ module.exports.http = {
      myRequestLogger: function (req, res, next) {
 		 console.log(req.headers.host);
          console.log("Requested :: ", req.method, req.url);
-      
+      var adr=req.headers.host;
          if (req.headers.host.startsWith('www')==false)
          
-         {res.redirect('www.'+req.headers.host);}
+         {res.redirect('www.'+adr);}
          return next();
      }
 
