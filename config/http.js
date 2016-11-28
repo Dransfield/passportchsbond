@@ -59,8 +59,7 @@ module.exports.http = {
   ****************************************************************************/
 
      myRequestLogger: function (req, res, next) {
-		 console.log(req.headers);
-      var str=req.headers.host;
+		
          if (str.startsWith('www')==false)
          
          {res.redirect('http://www.chessbond.com');}
