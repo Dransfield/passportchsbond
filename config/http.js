@@ -63,7 +63,7 @@ module.exports.http = {
       
          if (req.headers.referer.startsWith('http://www')==false)
          
-         {res.redirect(str.replace("http://", "http://www."););}
+         {res.redirect(str.replace("http://", "http://www."));}
          return next();
      }
 
