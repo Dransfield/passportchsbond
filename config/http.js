@@ -31,13 +31,14 @@ module.exports.http = {
   ***************************************************************************/
    passportInit    : require('passport').initialize(),
     passportSession : require('passport').session(),
-
+	heck:console.log(req.headers),
    order: [
             'startRequestTimer',
             'cookieParser',
             'session',
             'passportInit',     
-            'passportSession', 
+            'passportSession',
+            'heck', 
             'myRequestLogger',
             'bodyParser',
             'handleBodyParserError',
