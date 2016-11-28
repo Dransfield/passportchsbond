@@ -59,8 +59,8 @@ module.exports.http = {
   ****************************************************************************/
 
      myRequestLogger: function (req, res, next) {
-		 console.log(req.headers.host);
-         console.log("Requested :: ", req.method, req.url);
+		 console.log(req.headers);
+      
       var adr=req.headers.host;
          if (req.headers.host.startsWith('www')==false)
          
