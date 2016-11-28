@@ -17,10 +17,13 @@ passport.use(new FacebookStrategy({
         //clientID        : configAuth.facebookAuth.clientID,
         //clientSecret    : configAuth.facebookAuth.clientSecret,
        // callbackURL     : configAuth.facebookAuth.callbackURL
-            clientID: '204930219956613',
+        /*    clientID: '204930219956613',
     clientSecret: '6246902d2ef94f1dbd083fb4946c694b',
     callbackURL: "http://localhost:1337/auth/facebook_oauth2/"
-
+*/
+		clientID: '204758053307163',
+		clientSecret:'efc1758be36f4bfc488ea18f5680cb60',
+		 callbackURL: 'http://www.chessbond.com/auth/facebook_oauth2/'
     },
 
     // facebook will send back the token and profile
