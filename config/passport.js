@@ -23,7 +23,7 @@ passport.deserializeUser(function(id, done) {
         consumerSecret: "Ldrie1diKTTgQMWEV0AvL8WTa7jEYkaxPECoWbWDowig929PWd",
         callbackURL: 'http://www.chessbond.com/auth/twitter_oauth/'
       },
-      function(token, tokenSecret, profile, cb) {
+      function(token, tokenSecret, profile, done) {
         User.findOne({ twitterId: profile.id }, function (err, user) {
             // if there is an error, stop everything and return that
                 // ie an error connecting to the database
