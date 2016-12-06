@@ -10,7 +10,10 @@ passport.deserializeUser(function(id, done) {
 	console.log("deserialize user "+id);
 	
     User.findOne({ id: id } , function (err, user) {
-        done(err, user);
+		if (err)
+		{done(err,null);}
+		else{
+        done(err, user);}
     });
 });
 passport.use(new FacebookStrategy({
