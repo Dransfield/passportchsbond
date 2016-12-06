@@ -10,8 +10,8 @@ passport.deserializeUser(function(id, done) {
 	console.log("deserialize user "+id);
 	
     User.findOne({ id: id } , function (err, user) {
-		console.log("error"+JSON.stringify(err));
-		if (err)
+		console.log("user"+JSON.stringify(user));
+		if (!user)
 		{done(null, false);}
 		else{
         done(err, user);}
