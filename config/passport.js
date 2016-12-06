@@ -43,10 +43,10 @@ passport.use(new GoogleStrategy({
 					User.create({
                     // set all of the facebook information in our user model
                     googleId: profile.id, // set the users facebook id                   
-                    googletoken : token, // we will save the token that facebook provides to the user                    
-                    name:profile._json.screen_name,
-                    picture:profile._json.Picture
-                    }).exec( // look at the passport user profile to see how names are returned
+                    googletoken : refreshToken, // we will save the token that facebook provides to the user                    
+                    name:profile.displayName,
+                    picture:profile.photos[0]
+                                        }).exec( // look at the passport user profile to see how names are returned
                     
                     //facebookemail:  profile.emails[0].value}).exec( // facebook can return multiple emails so we'll take the first
 					function (err, records) {
