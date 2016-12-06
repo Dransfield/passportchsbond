@@ -7,7 +7,7 @@ module.exports.routes = {
        view: 'login'
   },
 	'/logintwitter': 'AuthController.logintwitter',
- '/auth/google_oauth':'AuthController.googlecallback',
+ '/auth/google_oauth2':'AuthController.googlecallback',
 	'/logingoogle': 'AuthController.logingoogle',
 
 '/auth/twitter_oauth':'AuthController.twittercallback',
