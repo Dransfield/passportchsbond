@@ -1,4 +1,4 @@
-<%if(req.session) %>
+<%if(req.session){ %>
 <%-JSON.stringify(req.session)%>
 <%-JSON.stringify(req.headers)%>
 <% } %>
