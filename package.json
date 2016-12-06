@@ -22,7 +22,7 @@
       "passport": "~0.2.1",
     "passport-local": "~1.0.0",
     "passport-facebook": "*",
-    
+    "passport-twitter": "*",
     "rc": "1.0.1",
     "sails": "~0.12.8",
     "sails-disk": "~0.10.9"
