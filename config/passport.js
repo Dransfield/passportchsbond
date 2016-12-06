@@ -49,12 +49,13 @@ passport.use(new FacebookStrategy({
                     // if there is no user found with that facebook id, create them
                     //var newUser            = new User();
                     console.log(profile);
+                    
 					User.create({
                     // set all of the facebook information in our user model
                     facebookid: profile.id, // set the users facebook id                   
                     facebooktoken : token, // we will save the token that facebook provides to the user                    
                     facebookname  : profile.name.givenName + ' ' + profile.name.familyName,
-                    email:profile.email,
+                    email:profile._json.email,
                     name:profile.displayName
                     }).exec( // look at the passport user profile to see how names are returned
                     
