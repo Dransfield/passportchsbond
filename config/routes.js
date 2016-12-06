@@ -6,7 +6,9 @@ module.exports.routes = {
   'get /login': {
        view: 'login'
   },
-
+	'/logintwitter': 'AuthController.logintwitter',
+ 
+'/auth/twitter_oauth2':'AuthController.twittercallback',
   'post /login': 'AuthController.login',
 	'/loginfacebook': 'AuthController.loginfacebook',
   '/logout': 'AuthController.logout',
