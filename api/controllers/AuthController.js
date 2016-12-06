@@ -14,6 +14,19 @@ module.exports = {
         shortcuts: false,
         rest: false
     },
+    
+        logingoogle:function(req,res){
+passport.authenticate('google')(req, res);
+	},
+	googlecallback:function(req,res)
+	{
+		
+		 passport.authenticate('google',{
+            successRedirect : '/profile',
+            failureRedirect : '/'
+        })(req, res);;
+	},
+    
     logintwitter:function(req,res){
 passport.authenticate('twitter')(req, res);
 	},
