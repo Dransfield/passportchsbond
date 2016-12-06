@@ -1,4 +1,5 @@
+<%if(req.session) %>
 <%-JSON.stringify(req.session)%>
 <%-JSON.stringify(req.headers)%>
-
+<% } %>
 <a href="/loginfacebook">Facebook</a>
