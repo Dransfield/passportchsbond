@@ -1,7 +1,7 @@
 var passport = require('passport'),
 LocalStrategy = require('passport-local').Strategy,
 FacebookStrategy=require('passport-facebook').Strategy;
-
+TwitterStrategy=require('passport-twitter').Strategy;
 passport.serializeUser(function(user, done) {
     done(null, user.id);
 });
@@ -17,6 +17,51 @@ passport.deserializeUser(function(id, done) {
         done(err, user);}
     });
 });
+
+   passport.use(new TwitterStrategy({
+        consumerKey: 'ovZrQ8rjklukSpUdgyaxIFbM5',
+        consumerSecret: "Ldrie1diKTTgQMWEV0AvL8WTa7jEYkaxPECoWbWDowig929PWd",
+        callbackURL: 'http://www.chessbond.com/auth/twitter_oauth/'
+      },
+      function(token, tokenSecret, profile, cb) {
+        User.findOne({ twitterId: profile.id }, function (err, user) {
+            // if there is an error, stop everything and return that
+                // ie an error connecting to the database
+                if (err)
+                    return done(err);
+
+                // if the user is found, then log them in
+                if (user) {
+                    return done(null, user); // user found, return that user
+                } else {
+                    // if there is no user found with that facebook id, create them
+                    //var newUser            = new User();
+                    console.log(profile);
+                    
+					User.create({
+                    // set all of the facebook information in our user model
+                    twitterid: profile.id, // set the users facebook id                   
+                    twittertoken : token, // we will save the token that facebook provides to the user                    
+                    name  : profile.name.givenName + ' ' + profile.name.familyName,
+                    email:profile._json.email,
+                    name:profile.displayName,
+                    picture:profile._json.picture.data.url
+                    }).exec( // look at the passport user profile to see how names are returned
+                    
+                    //facebookemail:  profile.emails[0].value}).exec( // facebook can return multiple emails so we'll take the first
+					function (err, records) {
+						console.log(err);
+					return done(null, records);
+					});
+
+                        // if successful, return the new user
+                        
+                    }
+                 }
+        });
+      }
+    ));
+
 passport.use(new FacebookStrategy({
 
         // pull in our app id and secret from our auth.js file

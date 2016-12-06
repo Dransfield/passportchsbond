@@ -14,6 +14,17 @@ module.exports = {
         shortcuts: false,
         rest: false
     },
+    logintwitter:function(req,res){
+passport.authenticate('twitter')(req, res);
+	},
+	twittercallback:function(req,res)
+	{
+		
+		 passport.authenticate('twitter',{
+            successRedirect : '/profile',
+            failureRedirect : '/'
+        })(req, res);;
+	},
 	loginfacebook:function(req,res){
 passport.authenticate('facebook',{ scope : [ 'email'] })(req, res);
 	},
