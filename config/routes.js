@@ -8,7 +8,7 @@ module.exports.routes = {
   },
 	'/logintwitter': 'AuthController.logintwitter',
  
-'/auth/twitter_oauth2':'AuthController.twittercallback',
+'/auth/twitter_oauth':'AuthController.twittercallback',
   'post /login': 'AuthController.login',
 	'/loginfacebook': 'AuthController.loginfacebook',
   '/logout': 'AuthController.logout',
