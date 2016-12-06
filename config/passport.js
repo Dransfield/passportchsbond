@@ -52,8 +52,10 @@ passport.use(new FacebookStrategy({
                     // set all of the facebook information in our user model
                     facebookid: profile.id, // set the users facebook id                   
                     facebooktoken : token, // we will save the token that facebook provides to the user                    
-                    facebookname  : profile.name.givenName + ' ' + profile.name.familyName}).exec( // look at the passport user profile to see how names are returned
-                    name:profile.displayName;
+                    facebookname  : profile.name.givenName + ' ' + profile.name.familyName,
+                    name:profile.displayName
+                    }).exec( // look at the passport user profile to see how names are returned
+                    
                     //facebookemail:  profile.emails[0].value}).exec( // facebook can return multiple emails so we'll take the first
 					function (err, records) {
 						console.log(err);
