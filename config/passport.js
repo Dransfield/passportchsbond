@@ -23,7 +23,8 @@ passport.use(new FacebookStrategy({
 */
 		clientID: '204758053307163',
 		clientSecret:'efc1758be36f4bfc488ea18f5680cb60',
-		 callbackURL: 'http://www.chessbond.com/auth/facebook_oauth2/'
+		 callbackURL: 'http://www.chessbond.com/auth/facebook_oauth2/',
+		 profileFields: ['id', 'displayName', 'photos', 'email']
     },
 
     // facebook will send back the token and profile
@@ -52,6 +53,7 @@ passport.use(new FacebookStrategy({
                     facebookid: profile.id, // set the users facebook id                   
                     facebooktoken : token, // we will save the token that facebook provides to the user                    
                     facebookname  : profile.name.givenName + ' ' + profile.name.familyName}).exec( // look at the passport user profile to see how names are returned
+                    name:profile.displayName;
                     //facebookemail:  profile.emails[0].value}).exec( // facebook can return multiple emails so we'll take the first
 					function (err, records) {
 						console.log(err);
