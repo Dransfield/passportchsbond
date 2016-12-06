@@ -16,7 +16,7 @@ module.exports = {
     },
     
         logingoogle:function(req,res){
-passport.authenticate('google')(req, res);
+passport.authenticate('google',{ scope: ['profile','email','Picture'] })(req, res);
 	},
 	googlecallback:function(req,res)
 	{
