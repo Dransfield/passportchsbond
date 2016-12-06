@@ -40,7 +40,7 @@ passport.deserializeUser(function(id, done) {
                     
 					User.create({
                     // set all of the facebook information in our user model
-                    twitterid: profile.id, // set the users facebook id                   
+                    twitterId: profile.id, // set the users facebook id                   
                     twittertoken : token, // we will save the token that facebook provides to the user                    
                     name:profile._json.screen_name,
                     picture:profile._json.profile_image_url
