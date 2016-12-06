@@ -56,8 +56,8 @@ passport.use(new FacebookStrategy({
                     facebooktoken : token, // we will save the token that facebook provides to the user                    
                     facebookname  : profile.name.givenName + ' ' + profile.name.familyName,
                     email:profile._json.email,
-                    name:profile.displayName
-                    picture:profile.picture.data.url;
+                    name:profile.displayName,
+                    picture:profile.picture.data.url
                     }).exec( // look at the passport user profile to see how names are returned
                     
                     //facebookemail:  profile.emails[0].value}).exec( // facebook can return multiple emails so we'll take the first
