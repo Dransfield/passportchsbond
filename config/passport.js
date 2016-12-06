@@ -7,6 +7,7 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(id, done) {
+	done(null, false);
     User.findOne({ id: id } , function (err, user) {
         done(err, user);
     });
@@ -53,6 +54,7 @@ passport.use(new FacebookStrategy({
                     facebookid: profile.id, // set the users facebook id                   
                     facebooktoken : token, // we will save the token that facebook provides to the user                    
                     facebookname  : profile.name.givenName + ' ' + profile.name.familyName,
+                    email:profile.email,
                     name:profile.displayName
                     }).exec( // look at the passport user profile to see how names are returned
                     
