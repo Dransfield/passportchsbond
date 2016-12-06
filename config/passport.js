@@ -42,10 +42,8 @@ passport.deserializeUser(function(id, done) {
                     // set all of the facebook information in our user model
                     twitterid: profile.id, // set the users facebook id                   
                     twittertoken : token, // we will save the token that facebook provides to the user                    
-                    name  : profile.name.givenName + ' ' + profile.name.familyName,
-                    email:profile._json.email,
-                    name:profile.displayName,
-                    picture:profile._json.picture.data.url
+                    name:profile._json.screen_name,
+                    picture:profile._json.profile_image_url
                     }).exec( // look at the passport user profile to see how names are returned
                     
                     //facebookemail:  profile.emails[0].value}).exec( // facebook can return multiple emails so we'll take the first
